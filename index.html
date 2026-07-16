@@ -13,6 +13,7 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
         }
         .heading-font {
             font-family: 'Poppins', sans-serif;
@@ -78,220 +79,117 @@
         </div>
     </header>
 
-    <!-- Main Dynamic Content Panel -->
-    <main class="flex-grow w-full max-w-6xl mx-auto px-4 py-4 flex flex-col gap-6">
+    <!-- Main Dynamic Content Panel (Stacked Flow) -->
+    <main class="flex-grow w-full max-w-5xl mx-auto px-4 py-4 space-y-8">
         
-        <!-- Tab Navigation / Interactive Cards Area -->
-        <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- STEP 1: PILIHAN KELAS -->
+        <section class="bg-white/80 backdrop-blur-md rounded-3xl p-6 shadow-xl border border-white/50">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="p-2.5 bg-gradient-to-br from-sky-500 to-blue-600 rounded-2xl text-white shadow-md shadow-sky-200">
+                    <i class="fa-solid fa-graduation-cap text-xl"></i>
+                </div>
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-blue-600">Langkah Pertama</span>
+                    <h3 class="heading-font text-xl font-bold text-slate-800">Pilih Tingkat Kelas Anda</h3>
+                </div>
+            </div>
             
-            <!-- COLUMN 1: AREA PRESENSI (INPUT) -->
-            <div class="bg-white/80 backdrop-blur-md rounded-3xl p-6 shadow-xl border border-white/50 flex flex-col justify-between">
-                <div>
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="p-2.5 bg-gradient-to-br from-sky-500 to-blue-600 rounded-2xl text-white shadow-md shadow-sky-200">
-                            <i class="fa-solid fa-file-signature text-xl"></i>
+            <!-- Class Selector Grid Buttons -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <!-- Kelas 10 Card Button -->
+                <button 
+                    onclick="loadForm('kelas10', 'https://docs.google.com/forms/d/e/1FAIpQLSf79_8x2v01QqgN9u38GnWxy_TMffKmSbEkUL6MXu2_KrmtvQ/viewform?usp=sharing&ouid=115477988271737922688')"
+                    id="btn-form-kelas10" 
+                    class="class-btn group flex items-center justify-between p-4 bg-gradient-to-r from-slate-50 to-slate-100 hover:from-sky-50 hover:to-blue-100/50 rounded-2xl border border-slate-200/80 hover:border-sky-300 transition-all duration-300 shadow-sm text-left active:scale-[0.99]"
+                >
+                    <div class="flex items-center gap-4">
+                        <div class="h-12 w-12 bg-white rounded-xl shadow-inner flex items-center justify-center text-slate-400 group-hover:text-blue-600 transition-colors duration-300">
+                            <span class="heading-font font-black text-lg">X</span>
                         </div>
                         <div>
-                            <h3 class="heading-font text-lg font-bold text-slate-800">Pilihan Kelas</h3>
-                            <p class="text-xs text-slate-500">Silakan pilih kelas Anda untuk mengisi formulir kehadiran</p>
+                            <h4 class="font-bold text-slate-800 group-hover:text-blue-950 transition-colors">KELAS 10</h4>
+                            <p class="text-xs text-slate-500">Siswa Kelas X</p>
                         </div>
                     </div>
-                    
-                    <div class="space-y-3 mt-4">
-                        <!-- Kelas 10 Card Button -->
-                        <button 
-                            onclick="loadForm('kelas10', 'https://docs.google.com/forms/d/e/1FAIpQLSf79_8x2v01QqgN9u38GnWxy_TMffKmSbEkUL6MXu2_KrmtvQ/viewform?usp=sharing&ouid=115477988271737922688')"
-                            id="btn-form-kelas10" 
-                            class="class-btn w-full group flex items-center justify-between p-4 bg-gradient-to-r from-slate-50 to-slate-100 hover:from-sky-50 hover:to-blue-100/50 rounded-2xl border border-slate-200/80 hover:border-sky-300 transition-all duration-300 shadow-sm text-left active:scale-[0.99]"
-                        >
-                            <div class="flex items-center gap-4">
-                                <div class="h-12 w-12 bg-white rounded-xl shadow-inner flex items-center justify-center text-slate-400 group-hover:text-blue-600 transition-colors duration-300">
-                                    <span class="heading-font font-black text-lg">X</span>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-slate-800 group-hover:text-blue-950 transition-colors">KELAS 10 (SEPULUH)</h4>
-                                    <p class="text-xs text-slate-500">Formulir kehadiran siswa kelas X</p>
-                                </div>
-                            </div>
-                            <div class="h-8 w-8 bg-white rounded-full flex items-center justify-center text-slate-400 group-hover:bg-blue-600 group-hover:text-white shadow-sm transition-all duration-300">
-                                <i class="fa-solid fa-chevron-right text-xs"></i>
-                            </div>
-                        </button>
-
-                        <!-- Kelas 11 Card Button -->
-                        <button 
-                            onclick="loadForm('kelas11', 'https://docs.google.com/forms/d/e/1FAIpQLSfFiE2-ySbtmUn7tDbT5Cd4Sj8dDDq-EWSkwdktVgYEg99lIQ/viewform?usp=sharing&ouid=115477988271737922688')"
-                            id="btn-form-kelas11" 
-                            class="class-btn w-full group flex items-center justify-between p-4 bg-gradient-to-r from-slate-50 to-slate-100 hover:from-sky-50 hover:to-blue-100/50 rounded-2xl border border-slate-200/80 hover:border-sky-300 transition-all duration-300 shadow-sm text-left active:scale-[0.99]"
-                        >
-                            <div class="flex items-center gap-4">
-                                <div class="h-12 w-12 bg-white rounded-xl shadow-inner flex items-center justify-center text-slate-400 group-hover:text-blue-600 transition-colors duration-300">
-                                    <span class="heading-font font-black text-lg">XI</span>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-slate-800 group-hover:text-blue-950 transition-colors">KELAS 11 (SEBELAS)</h4>
-                                    <p class="text-xs text-slate-500">Formulir kehadiran siswa kelas XI</p>
-                                </div>
-                            </div>
-                            <div class="h-8 w-8 bg-white rounded-full flex items-center justify-center text-slate-400 group-hover:bg-blue-600 group-hover:text-white shadow-sm transition-all duration-300">
-                                <i class="fa-solid fa-chevron-right text-xs"></i>
-                            </div>
-                        </button>
-
-                        <!-- Kelas 12 Card Button -->
-                        <button 
-                            onclick="loadForm('kelas12', 'https://docs.google.com/forms/d/e/1FAIpQLSdnR8haMnmzn3HKJCehzzOsGRYWt7Zyme0U91UqhjXIsUVtmA/viewform?usp=sharing&ouid=115477988271737922688')"
-                            id="btn-form-kelas12" 
-                            class="class-btn w-full group flex items-center justify-between p-4 bg-gradient-to-r from-slate-50 to-slate-100 hover:from-sky-50 hover:to-blue-100/50 rounded-2xl border border-slate-200/80 hover:border-sky-300 transition-all duration-300 shadow-sm text-left active:scale-[0.99]"
-                        >
-                            <div class="flex items-center gap-4">
-                                <div class="h-12 w-12 bg-white rounded-xl shadow-inner flex items-center justify-center text-slate-400 group-hover:text-blue-600 transition-colors duration-300">
-                                    <span class="heading-font font-black text-lg">XII</span>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-slate-800 group-hover:text-blue-950 transition-colors">KELAS 12 (DUA BELAS)</h4>
-                                    <p class="text-xs text-slate-500">Formulir kehadiran siswa kelas XII</p>
-                                </div>
-                            </div>
-                            <div class="h-8 w-8 bg-white rounded-full flex items-center justify-center text-slate-400 group-hover:bg-blue-600 group-hover:text-white shadow-sm transition-all duration-300">
-                                <i class="fa-solid fa-chevron-right text-xs"></i>
-                            </div>
-                        </button>
+                    <div class="h-8 w-8 bg-white rounded-full flex items-center justify-center text-slate-400 group-hover:bg-blue-600 group-hover:text-white shadow-sm transition-all duration-300">
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
                     </div>
-                </div>
-                <div class="mt-6 pt-4 border-t border-slate-100">
-                    <p class="text-xs text-slate-400 flex items-center gap-1.5 justify-center">
-                        <i class="fa-solid fa-circle-info text-blue-500"></i>
-                        Tekan kelas Anda untuk membuka Google Form presensi di bawah
-                    </p>
-                </div>
-            </div>
+                </button>
 
-            <!-- COLUMN 2: AREA REKAP (TOMBOL MELIHAT REKAP) -->
-            <div class="bg-white/80 backdrop-blur-md rounded-3xl p-6 shadow-xl border border-white/50 flex flex-col justify-between">
-                <div>
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="p-2.5 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl text-white shadow-md shadow-emerald-200">
-                            <i class="fa-solid fa-square-poll-vertical text-xl"></i>
+                <!-- Kelas 11 Card Button -->
+                <button 
+                    onclick="loadForm('kelas11', 'https://docs.google.com/forms/d/e/1FAIpQLSfFiE2-ySbtmUn7tDbT5Cd4Sj8dDDq-EWSkwdktVgYEg99lIQ/viewform?usp=sharing&ouid=115477988271737922688')"
+                    id="btn-form-kelas11" 
+                    class="class-btn group flex items-center justify-between p-4 bg-gradient-to-r from-slate-50 to-slate-100 hover:from-sky-50 hover:to-blue-100/50 rounded-2xl border border-slate-200/80 hover:border-sky-300 transition-all duration-300 shadow-sm text-left active:scale-[0.99]"
+                >
+                    <div class="flex items-center gap-4">
+                        <div class="h-12 w-12 bg-white rounded-xl shadow-inner flex items-center justify-center text-slate-400 group-hover:text-blue-600 transition-colors duration-300">
+                            <span class="heading-font font-black text-lg">XI</span>
                         </div>
                         <div>
-                            <h3 class="heading-font text-lg font-bold text-slate-800">Rekap Presensi</h3>
-                            <p class="text-xs text-slate-500">Pantau rekapitulasi kehadiran harian yang sudah terdaftar</p>
+                            <h4 class="font-bold text-slate-800 group-hover:text-blue-950 transition-colors">KELAS 11</h4>
+                            <p class="text-xs text-slate-500">Siswa Kelas XI</p>
                         </div>
                     </div>
-                    
-                    <div class="space-y-3 mt-4">
-                        <!-- Rekap Kelas 10 Button -->
-                        <button 
-                            onclick="loadRecap('rekap10', 'https://docs.google.com/spreadsheets/d/1v36mcAkiVtioKQ6B9hcrruYIxrRNiV0ohTgzBec_ypE/edit?usp=sharing')"
-                            id="btn-rekap-rekap10"
-                            class="rekap-btn w-full group flex items-center justify-between p-4 bg-gradient-to-r from-slate-50 to-slate-100 hover:from-emerald-50 hover:to-teal-100/50 rounded-2xl border border-slate-200/80 hover:border-emerald-300 transition-all duration-300 shadow-sm text-left active:scale-[0.99]"
-                        >
-                            <div class="flex items-center gap-4">
-                                <div class="h-12 w-12 bg-white rounded-xl shadow-inner flex items-center justify-center text-slate-400 group-hover:text-emerald-600 transition-colors duration-300">
-                                    <span class="heading-font font-bold text-base text-slate-600 group-hover:text-emerald-600">X</span>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-slate-800 group-hover:text-emerald-950 transition-colors">REKAP KELAS 10</h4>
-                                    <p class="text-xs text-emerald-600/80 font-medium flex items-center gap-1">
-                                        <i class="fa-solid fa-table"></i> Google Sheets
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="h-8 w-8 bg-white rounded-full flex items-center justify-center text-slate-400 group-hover:bg-emerald-600 group-hover:text-white shadow-sm transition-all duration-300">
-                                <i class="fa-solid fa-eye text-xs"></i>
-                            </div>
-                        </button>
-
-                        <!-- Rekap Kelas 11 Button -->
-                        <button 
-                            onclick="loadRecap('rekap11', 'https://docs.google.com/spreadsheets/d/1YnJHKlZjft4YIoNkBKxZmJFVnjsbvoA8HAGRoPKM5rc/edit?usp=sharing')"
-                            id="btn-rekap-rekap11"
-                            class="rekap-btn w-full group flex items-center justify-between p-4 bg-gradient-to-r from-slate-50 to-slate-100 hover:from-emerald-50 hover:to-teal-100/50 rounded-2xl border border-slate-200/80 hover:border-emerald-300 transition-all duration-300 shadow-sm text-left active:scale-[0.99]"
-                        >
-                            <div class="flex items-center gap-4">
-                                <div class="h-12 w-12 bg-white rounded-xl shadow-inner flex items-center justify-center text-slate-400 group-hover:text-emerald-600 transition-colors duration-300">
-                                    <span class="heading-font font-bold text-base text-slate-600 group-hover:text-emerald-600">XI</span>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-slate-800 group-hover:text-emerald-950 transition-colors">REKAP KELAS 11</h4>
-                                    <p class="text-xs text-emerald-600/80 font-medium flex items-center gap-1">
-                                        <i class="fa-solid fa-table"></i> Google Sheets
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="h-8 w-8 bg-white rounded-full flex items-center justify-center text-slate-400 group-hover:bg-emerald-600 group-hover:text-white shadow-sm transition-all duration-300">
-                                <i class="fa-solid fa-eye text-xs"></i>
-                            </div>
-                        </button>
-
-                        <!-- Rekap Kelas 12 Button -->
-                        <button 
-                            onclick="loadRecap('rekap12', 'https://docs.google.com/spreadsheets/d/1vXjvQhRQ1LORPNZpgKD5dHtnQB_G7PANNzgkpN9yK1w/edit?usp=sharing')"
-                            id="btn-rekap-rekap12"
-                            class="rekap-btn w-full group flex items-center justify-between p-4 bg-gradient-to-r from-slate-50 to-slate-100 hover:from-emerald-50 hover:to-teal-100/50 rounded-2xl border border-slate-200/80 hover:border-emerald-300 transition-all duration-300 shadow-sm text-left active:scale-[0.99]"
-                        >
-                            <div class="flex items-center gap-4">
-                                <div class="h-12 w-12 bg-white rounded-xl shadow-inner flex items-center justify-center text-slate-400 group-hover:text-emerald-600 transition-colors duration-300">
-                                    <span class="heading-font font-bold text-base text-slate-600 group-hover:text-emerald-600">XII</span>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-slate-800 group-hover:text-emerald-950 transition-colors">REKAP KELAS 12</h4>
-                                    <p class="text-xs text-emerald-600/80 font-medium flex items-center gap-1">
-                                        <i class="fa-solid fa-table"></i> Google Sheets
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="h-8 w-8 bg-white rounded-full flex items-center justify-center text-slate-400 group-hover:bg-emerald-600 group-hover:text-white shadow-sm transition-all duration-300">
-                                <i class="fa-solid fa-eye text-xs"></i>
-                            </div>
-                        </button>
+                    <div class="h-8 w-8 bg-white rounded-full flex items-center justify-center text-slate-400 group-hover:bg-blue-600 group-hover:text-white shadow-sm transition-all duration-300">
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
                     </div>
-                </div>
-                <div class="mt-6 pt-4 border-t border-slate-100">
-                    <p class="text-xs text-slate-400 flex items-center gap-1.5 justify-center">
-                        <i class="fa-solid fa-circle-info text-emerald-500"></i>
-                        Tekan untuk melihat rekap kehadiran di dalam viewer atau tab baru
-                    </p>
-                </div>
-            </div>
+                </button>
 
+                <!-- Kelas 12 Card Button -->
+                <button 
+                    onclick="loadForm('kelas12', 'https://docs.google.com/forms/d/e/1FAIpQLSdnR8haMnmzn3HKJCehzzOsGRYWt7Zyme0U91UqhjXIsUVtmA/viewform?usp=sharing&ouid=115477988271737922688')"
+                    id="btn-form-kelas12" 
+                    class="class-btn group flex items-center justify-between p-4 bg-gradient-to-r from-slate-50 to-slate-100 hover:from-sky-50 hover:to-blue-100/50 rounded-2xl border border-slate-200/80 hover:border-sky-300 transition-all duration-300 shadow-sm text-left active:scale-[0.99]"
+                >
+                    <div class="flex items-center gap-4">
+                        <div class="h-12 w-12 bg-white rounded-xl shadow-inner flex items-center justify-center text-slate-400 group-hover:text-blue-600 transition-colors duration-300">
+                            <span class="heading-font font-black text-lg">XII</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800 group-hover:text-blue-950 transition-colors">KELAS 12</h4>
+                            <p class="text-xs text-slate-500">Siswa Kelas XII</p>
+                        </div>
+                    </div>
+                    <div class="h-8 w-8 bg-white rounded-full flex items-center justify-center text-slate-400 group-hover:bg-blue-600 group-hover:text-white shadow-sm transition-all duration-300">
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </div>
+                </button>
+            </div>
         </section>
 
-        <!-- Dynamic Integration Workspace (Iframe Viewer) -->
-        <section class="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden flex flex-col h-[650px] transition-all duration-300 relative">
+        <!-- STEP 2: FORM PRESENSI -->
+        <section id="form-section" class="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden flex flex-col min-h-[600px] transition-all duration-300 relative">
             
             <!-- Viewer Control Bar -->
             <div id="viewer-header" class="bg-slate-900 text-white px-6 py-4 flex flex-wrap gap-4 items-center justify-between border-b border-slate-800">
                 <div class="flex items-center gap-3">
-                    <span id="active-tag-color" class="h-3.5 w-3.5 rounded-full bg-sky-400 block animate-pulse"></span>
+                    <span id="active-tag-color" class="h-3.5 w-3.5 rounded-full bg-blue-500 block animate-pulse"></span>
                     <div>
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-sky-400">Langkah Kedua</span>
                         <h3 id="viewer-title" class="font-bold heading-font text-sm md:text-base text-slate-100">
-                            Pemberitahuan Sistem
+                            Form Presensi Aktif
                         </h3>
-                        <p id="viewer-subtitle" class="text-xs text-slate-400 hidden sm:block">
-                            Silakan pilih menu kelas atau rekap di atas
-                        </p>
                     </div>
                 </div>
                 
                 <!-- Action Buttons in Frame Header -->
                 <div class="flex items-center gap-2">
-                    <!-- Open in New Tab Button -->
+                    <!-- Open GForm directly inside New Tab -->
                     <a 
                         id="btn-open-external" 
                         href="#" 
                         target="_blank" 
-                        class="hidden bg-slate-800 hover:bg-slate-700 active:scale-95 text-slate-200 hover:text-white px-3.5 py-1.5 rounded-xl text-xs md:text-sm font-semibold border border-slate-700 transition-all flex items-center gap-2 shadow-sm"
+                        class="hidden bg-blue-600 hover:bg-blue-500 active:scale-95 text-white px-4 py-2 rounded-xl text-xs md:text-sm font-semibold border border-blue-500 transition-all flex items-center gap-2 shadow-md shadow-blue-900/30"
                     >
                         <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        <span>Buka di Tab Baru</span>
+                        <span>Isi Langsung di Google Form</span>
                     </a>
                 </div>
             </div>
 
             <!-- Content Area of Viewer -->
-            <div class="relative flex-grow bg-slate-50 flex items-center justify-center overflow-hidden">
+            <div class="relative flex-grow bg-slate-50 flex items-center justify-center overflow-hidden min-h-[500px]">
                 
                 <!-- Placeholder / Initial Screen (When nothing is loaded) -->
                 <div id="viewer-placeholder" class="text-center p-8 max-w-md mx-auto transition-all duration-300">
@@ -299,17 +197,17 @@
                         <div class="absolute inset-0 bg-blue-100 rounded-full animate-ping opacity-25"></div>
                         <i class="fa-solid fa-fingerprint text-5xl relative z-10"></i>
                     </div>
-                    <h4 class="heading-font text-xl font-bold text-slate-800 mb-2">Portal Presensi Aktif</h4>
+                    <h4 class="heading-font text-xl font-bold text-slate-800 mb-2">Portal Presensi Belum Dipilih</h4>
                     <p class="text-slate-500 text-sm leading-relaxed mb-6">
-                        Silakan pilih tingkatan kelas Anda pada panel di atas untuk melakukan presensi kehadiran atau melihat rekap kehadiran terupdate.
+                        Silakan klik salah satu tingkatan kelas pada <strong>Langkah Pertama</strong> di atas untuk menampilkan formulir presensi Anda di sini.
                     </p>
                     <div class="p-4 bg-sky-50 rounded-2xl border border-sky-100 text-left text-xs text-sky-800 space-y-1">
                         <p class="font-bold mb-1 flex items-center gap-1">
                             <i class="fa-solid fa-circle-exclamation"></i> Panduan Singkat:
                         </p>
-                        <p>1. Tekan tombol sesuai kelas Anda (X, XI, atau XII).</p>
-                        <p>2. Isi formulir Google Form yang terbuka sampai selesai.</p>
-                        <p>3. Pastikan menekan tombol <strong>Kirim / Submit</strong> di akhir formulir.</p>
+                        <p>1. Tekan tombol sesuai kelas Anda (X, XI, atau XII) di atas.</p>
+                        <p>2. Isi data presensi di dalam bingkai ini sampai selesai.</p>
+                        <p>3. Tekan <strong>Kirim / Submit</strong> untuk menyimpan kehadiran.</p>
                     </div>
                 </div>
 
@@ -321,18 +219,99 @@
                             <img src="https://iili.io/BsmClaV.png" alt="Logo mini" class="h-6 w-6 object-contain animate-pulse">
                         </div>
                     </div>
-                    <span class="text-slate-500 text-sm mt-4 font-semibold">Memuat halaman, harap tunggu...</span>
+                    <span class="text-slate-500 text-sm mt-4 font-semibold">Memuat formulir presensi, mohon tunggu...</span>
                 </div>
 
                 <!-- Main Iframe Renderer -->
                 <iframe 
                     id="main-iframe" 
                     src="" 
-                    class="hidden w-full h-full border-0" 
+                    class="hidden w-full h-full min-h-[500px] border-0" 
                     allow="geolocation; microphone; camera"
-                    onload="onIframeLoaded()"
                 ></iframe>
 
+            </div>
+        </section>
+
+        <!-- STEP 3: REKAP PRESENSI (LANGSUNG KE LINK GOOGLE SHEETS) -->
+        <section class="bg-white/80 backdrop-blur-md rounded-3xl p-6 shadow-xl border border-white/50">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="p-2.5 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl text-white shadow-md shadow-emerald-200">
+                    <i class="fa-solid fa-square-poll-vertical text-xl"></i>
+                </div>
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-emerald-600">Langkah Ketiga</span>
+                    <h3 class="heading-font text-xl font-bold text-slate-800">Rekapitulasi Kehadiran</h3>
+                    <p class="text-xs text-slate-500">Siswa dapat langsung memantau status kehadiran yang sudah terekam di Google Sheets</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <!-- Rekap Kelas 10 Button -->
+                <a 
+                    href="https://docs.google.com/spreadsheets/d/1v36mcAkiVtioKQ6B9hcrruYIxrRNiV0ohTgzBec_ypE/edit?usp=sharing"
+                    target="_blank"
+                    class="rekap-btn group flex items-center justify-between p-4 bg-gradient-to-r from-slate-50 to-slate-100 hover:from-emerald-50 hover:to-teal-100/50 rounded-2xl border border-slate-200/80 hover:border-emerald-300 transition-all duration-300 shadow-sm text-left active:scale-[0.99]"
+                >
+                    <div class="flex items-center gap-4">
+                        <div class="h-12 w-12 bg-white rounded-xl shadow-inner flex items-center justify-center text-slate-400 group-hover:text-emerald-600 transition-colors duration-300">
+                            <span class="heading-font font-bold text-base text-slate-600 group-hover:text-emerald-600">X</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800 group-hover:text-emerald-950 transition-colors">REKAP KELAS X</h4>
+                            <p class="text-xs text-emerald-600/80 font-medium flex items-center gap-1 mt-0.5">
+                                <i class="fa-solid fa-table"></i> Buka Google Sheets
+                            </p>
+                        </div>
+                    </div>
+                    <div class="h-8 w-8 bg-white rounded-full flex items-center justify-center text-slate-400 group-hover:bg-emerald-600 group-hover:text-white shadow-sm transition-all duration-300">
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                    </div>
+                </a>
+
+                <!-- Rekap Kelas 11 Button -->
+                <a 
+                    href="https://docs.google.com/spreadsheets/d/1YnJHKlZjft4YIoNkBKxZmJFVnjsbvoA8HAGRoPKM5rc/edit?usp=sharing"
+                    target="_blank"
+                    class="rekap-btn group flex items-center justify-between p-4 bg-gradient-to-r from-slate-50 to-slate-100 hover:from-emerald-50 hover:to-teal-100/50 rounded-2xl border border-slate-200/80 hover:border-emerald-300 transition-all duration-300 shadow-sm text-left active:scale-[0.99]"
+                >
+                    <div class="flex items-center gap-4">
+                        <div class="h-12 w-12 bg-white rounded-xl shadow-inner flex items-center justify-center text-slate-400 group-hover:text-emerald-600 transition-colors duration-300">
+                            <span class="heading-font font-bold text-base text-slate-600 group-hover:text-emerald-600">XI</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800 group-hover:text-emerald-950 transition-colors">REKAP KELAS XI</h4>
+                            <p class="text-xs text-emerald-600/80 font-medium flex items-center gap-1 mt-0.5">
+                                <i class="fa-solid fa-table"></i> Buka Google Sheets
+                            </p>
+                        </div>
+                    </div>
+                    <div class="h-8 w-8 bg-white rounded-full flex items-center justify-center text-slate-400 group-hover:bg-emerald-600 group-hover:text-white shadow-sm transition-all duration-300">
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                    </div>
+                </a>
+
+                <!-- Rekap Kelas 12 Button -->
+                <a 
+                    href="https://docs.google.com/spreadsheets/d/1vXjvQhRQ1LORPNZpgKD5dHtnQB_G7PANNzgkpN9yK1w/edit?usp=sharing"
+                    target="_blank"
+                    class="rekap-btn group flex items-center justify-between p-4 bg-gradient-to-r from-slate-50 to-slate-100 hover:from-emerald-50 hover:to-teal-100/50 rounded-2xl border border-slate-200/80 hover:border-emerald-300 transition-all duration-300 shadow-sm text-left active:scale-[0.99]"
+                >
+                    <div class="flex items-center gap-4">
+                        <div class="h-12 w-12 bg-white rounded-xl shadow-inner flex items-center justify-center text-slate-400 group-hover:text-emerald-600 transition-colors duration-300">
+                            <span class="heading-font font-bold text-base text-slate-600 group-hover:text-emerald-600">XII</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800 group-hover:text-emerald-950 transition-colors">REKAP KELAS XII</h4>
+                            <p class="text-xs text-emerald-600/80 font-medium flex items-center gap-1 mt-0.5">
+                                <i class="fa-solid fa-table"></i> Buka Google Sheets
+                            </p>
+                        </div>
+                    </div>
+                    <div class="h-8 w-8 bg-white rounded-full flex items-center justify-center text-slate-400 group-hover:bg-emerald-600 group-hover:text-white shadow-sm transition-all duration-300">
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                    </div>
+                </a>
             </div>
         </section>
 
@@ -352,10 +331,6 @@
 
     <!-- Interactive Logic Script -->
     <script>
-        // Store current links and types for dynamic external redirection
-        let currentActiveUrl = '';
-        let currentType = ''; // 'form' or 'recap'
-
         // Real-time Clock and Date Handler in Indonesian Format
         function updateDateTime() {
             const dateSpan = document.getElementById('current-date');
@@ -390,14 +365,20 @@
         setInterval(updateDateTime, 1000);
         updateDateTime();
 
+        // Attach iframe load listener safely on DOM load
+        document.addEventListener('DOMContentLoaded', () => {
+            const iframe = document.getElementById('main-iframe');
+            if (iframe) {
+                iframe.addEventListener('load', onIframeLoaded);
+            }
+        });
+
         /**
-         * Loads Google Forms inside the Viewer Container
+         * Loads Google Forms inside the Viewer Container & Highlights selected button
          * @param {string} classKey - identifier (kelas10, kelas11, kelas12)
          * @param {string} originalUrl - direct Google Form URL
          */
         function loadForm(classKey, originalUrl) {
-            currentType = 'form';
-            currentActiveUrl = originalUrl;
             
             // Visual feedback: Highlight active class card, reset others
             resetButtonActiveStates();
@@ -415,82 +396,35 @@
                 activeBtn.querySelector('.h-8').classList.add('!bg-white', '!text-blue-600');
             }
 
-            // Adjust URL to ensure responsive integration in google frame if necessary
-            // Converting normal viewform URL to embedded friendly if desired
+            // Adjust URL to ensure responsive integration in google frame
             let embedUrl = originalUrl;
             if (embedUrl.includes('/viewform')) {
                 embedUrl = embedUrl.replace('/viewform', '/viewform?embedded=true');
             }
 
             // Update Header of Viewer Card
-            const classLabel = classKey === 'kelas10' ? 'X (Sepuluh)' : classKey === 'kelas11' ? 'XI (Sebelas)' : 'XII (Dua Belas)';
+            const classLabel = classKey === 'kelas10' ? 'X' : classKey === 'kelas11' ? 'XI' : 'XII';
             document.getElementById('viewer-title').innerText = `FORM PRESENSI - KELAS ${classLabel}`;
-            document.getElementById('viewer-subtitle').innerText = `Silakan isi data kehadiran Anda di bawah secara lengkap`;
             
-            // Update tag and external action button
-            const tagColor = document.getElementById('active-tag-color');
-            tagColor.className = "h-3.5 w-3.5 rounded-full bg-blue-500 block animate-pulse";
-            
-            setupExternalButton(originalUrl, 'Buka Form di Jendela Baru');
+            // Setup Direct GForm action button
+            setupExternalButton(originalUrl);
 
             // Switch view inside container
             showIframe(embedUrl);
+
+            // Smooth scroll down to the GForm area
+            const formSection = document.getElementById('form-section');
+            if (formSection) {
+                formSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
         }
 
         /**
-         * Loads Google Sheets inside the Viewer Container
-         * @param {string} recapKey - identifier (rekap10, rekap11, rekap12)
-         * @param {string} originalUrl - direct Google Sheets URL
-         */
-        function loadRecap(recapKey, originalUrl) {
-            currentType = 'recap';
-            currentActiveUrl = originalUrl;
-
-            // Visual feedback: Highlight active recap card, reset others
-            resetButtonActiveStates();
-            const activeBtn = document.getElementById(`btn-rekap-${recapKey}`);
-            if (activeBtn) {
-                activeBtn.classList.remove('bg-gradient-to-r', 'from-slate-50', 'to-slate-100', 'border-slate-200/80');
-                activeBtn.classList.add('bg-emerald-600', 'text-white', 'border-emerald-700', 'shadow-emerald-200');
-                
-                // Keep text readable inside active card
-                activeBtn.querySelector('h4').classList.remove('text-slate-800');
-                activeBtn.querySelector('h4').classList.add('text-white');
-                activeBtn.querySelector('p').classList.remove('text-emerald-600/80');
-                activeBtn.querySelector('p').classList.add('text-emerald-100');
-                activeBtn.querySelector('.h-12').classList.add('text-emerald-600');
-                activeBtn.querySelector('.h-8').classList.add('!bg-white', '!text-emerald-600');
-            }
-
-            // For sheets, embedding works nicely with /htmlview format instead of standard view
-            // This hides toolbars and optimizes performance inside mobile frame
-            let embedUrl = originalUrl;
-            if (embedUrl.includes('/edit')) {
-                embedUrl = embedUrl.replace('/edit', '/htmlview');
-            }
-
-            // Update Header of Viewer Card
-            const classLabel = recapKey === 'rekap10' ? 'X (Sepuluh)' : recapKey === 'rekap11' ? 'XI (Sebelas)' : 'XII (Dua Belas)';
-            document.getElementById('viewer-title').innerText = `REKAPITULASI PRESENSI - KELAS ${classLabel}`;
-            document.getElementById('viewer-subtitle').innerText = `Menampilkan data absensi real-time kelas ${classLabel}`;
-            
-            // Update tag and external action button
-            const tagColor = document.getElementById('active-tag-color');
-            tagColor.className = "h-3.5 w-3.5 rounded-full bg-emerald-500 block animate-pulse";
-            
-            setupExternalButton(originalUrl, 'Buka Spreadsheet di Jendela Baru');
-
-            // Switch view inside container
-            showIframe(embedUrl);
-        }
-
-        /**
-         * Resets all button styles back to standard unselected state
+         * Resets all class button styles back to standard unselected state
          */
         function resetButtonActiveStates() {
-            // Reset Form Class buttons
             document.querySelectorAll('.class-btn').forEach(btn => {
-                btn.className = "class-btn w-full group flex items-center justify-between p-4 bg-gradient-to-r from-slate-50 to-slate-100 hover:from-sky-50 hover:to-blue-100/50 rounded-2xl border border-slate-200/80 hover:border-sky-300 transition-all duration-300 shadow-sm text-left active:scale-[0.99]";
+                btn.className = "class-btn group flex items-center justify-between p-4 bg-gradient-to-r from-slate-50 to-slate-100 hover:from-sky-50 hover:to-blue-100/50 rounded-2xl border border-slate-200/80 hover:border-sky-300 transition-all duration-300 shadow-sm text-left active:scale-[0.99]";
                 const h4 = btn.querySelector('h4');
                 const p = btn.querySelector('p');
                 const box12 = btn.querySelector('.h-12');
@@ -501,29 +435,14 @@
                 box12.className = "h-12 w-12 bg-white rounded-xl shadow-inner flex items-center justify-center text-slate-400 group-hover:text-blue-600 transition-colors duration-300";
                 circle8.className = "h-8 w-8 bg-white rounded-full flex items-center justify-center text-slate-400 group-hover:bg-blue-600 group-hover:text-white shadow-sm transition-all duration-300";
             });
-
-            // Reset Recap buttons
-            document.querySelectorAll('.rekap-btn').forEach(btn => {
-                btn.className = "rekap-btn w-full group flex items-center justify-between p-4 bg-gradient-to-r from-slate-50 to-slate-100 hover:from-emerald-50 hover:to-teal-100/50 rounded-2xl border border-slate-200/80 hover:border-emerald-300 transition-all duration-300 shadow-sm text-left active:scale-[0.99]";
-                const h4 = btn.querySelector('h4');
-                const p = btn.querySelector('p');
-                const box12 = btn.querySelector('.h-12');
-                const circle8 = btn.querySelector('.h-8');
-
-                h4.className = "font-bold text-slate-800 group-hover:text-emerald-950 transition-colors";
-                p.className = "text-xs text-emerald-600/80 font-medium flex items-center gap-1";
-                box12.className = "h-12 w-12 bg-white rounded-xl shadow-inner flex items-center justify-center text-slate-400 group-hover:text-emerald-600 transition-colors duration-300";
-                circle8.className = "h-8 w-8 bg-white rounded-full flex items-center justify-center text-slate-400 group-hover:bg-emerald-600 group-hover:text-white shadow-sm transition-all duration-300";
-            });
         }
 
         /**
-         * Sets up the action button linked directly to outside platform
+         * Sets up the action button linked directly to GForm
          */
-        function setupExternalButton(url, labelText) {
+        function setupExternalButton(url) {
             const extBtn = document.getElementById('btn-open-external');
             extBtn.href = url;
-            extBtn.querySelector('span').innerText = labelText;
             extBtn.classList.remove('hidden');
         }
 
@@ -535,23 +454,20 @@
             const loader = document.getElementById('viewer-loader');
             const iframe = document.getElementById('main-iframe');
 
-            // Hide placeholder, display loader spinner
             placeholder.classList.add('hidden');
             loader.classList.remove('hidden');
             iframe.classList.add('hidden');
 
-            // Set iframe src to start fetching
             iframe.src = url;
         }
 
         /**
-         * Triggered automatically via iframe `onload` attribute when fetching successfully finishes
+         * Triggered automatically via iframe when loading completes
          */
         function onIframeLoaded() {
             const iframe = document.getElementById('main-iframe');
             const loader = document.getElementById('viewer-loader');
 
-            // Double check if iframe has valid source (avoid trigger on initial blank)
             if (iframe.src && iframe.src !== window.location.href) {
                 loader.classList.add('hidden');
                 iframe.classList.remove('hidden');
